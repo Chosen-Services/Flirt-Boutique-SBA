@@ -22,13 +22,201 @@ button:hover {
   display: flex;
   top: 0;
   margin: 0;
-  padding: 10px 30px 5px 10px;
+  padding: 10px 3px 5px 10px;
   justify-content: center;
   gap: 10px;
   align-items: center;
   background: linear-gradient(18deg, rgb(94, 105, 116), rgb(36, 36, 36));
   color: white;
   user-select: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(18deg, rgb(94, 105, 116), rgb(36, 36, 36));
+  color: black;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.navbar-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.navbar-right {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.logo img {
+  width: 50px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.category-dropdown {
+  padding: 8px;
+  border: none;
+  background-color: #f3f3f3;
+  color: #333;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-button {
+  background-color: #c990a1;
+  border: none;
+  border-radius: 0 10px 10px 0px;
+  cursor: pointer;
+  padding: 5px;
+  width: 50px;
+  height: 35.3px;
+}
+
+.search-button img {
+  width: 30px;
+  filter: invert(100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  margin-left: 20px;
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.cart {
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.cart #shop {
+  font-size: 24px;
+  filter: invert();
+}
+
+.cart #amount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+
+  .navbar-right {
+    justify-content: space-around;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .search-input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .search-button {
+    background-color: #c990a1;
+    border: none;
+    border-radius: 0 10px 10px 0px;
+    cursor: pointer;
+    padding: 7px;
+  }
+
+  .search-button img {
+    width: 25px;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .cart #shop {
+    font-size: 20px;
+  }
 }
 
 .hero #Welcome {
@@ -43,117 +231,6 @@ button:hover {
   color: white;
   font-weight: normal;
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Styling for the navbar and cart container */
-.navbar .cart {
-  position: relative; /* Allows absolute positioning of the amount */
-  display: flex; /* Flex to align the cart icon and amount */
-  align-items: center; /* Vertically center the cart icon */
-  justify-content: center; /* Horizontally center the cart icon */
-}
-
-.navbar .cart #shop {
-  background-color: transparent;
-  border: none;
-  filter: invert();
-  font-size: 24px; /* Adjust the size of the cart icon */
-}
-
-/* Styling for the amount above the cart */
-.navbar .cart #amount {
-  position: absolute; /* Position it above the cart icon */
-  top: -10px; /* Adjust this to move the amount higher or lower */
-  right: -10px; /* Adjust this to fine-tune its position */
-  background-color: red; /* You can change the background color */
-  color: white; /* White text for contrast */
-  border-radius: 50%; /* Round shape */
-  padding: 5px 10px; /* Padding for the amount */
-  font-size: 14px; /* Size of the amount text */
-  display: flex;
-  justify-content: center; /* Center the text horizontally */
-  align-items: center; /* Center the text vertically */
-}
-
-.navbar * {
-  border: none;
-  color: #fff;
-}
-
-.navbar button {
-  background-color: transparent;
-}
-
-.navbar button:hover {
-  cursor: pointer;
-}
-
-.navbar select {
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.navbar option {
-  color: black;
-}
-
-.navbar .search-bar {
-  display: flex;
-  min-width: 1fr;
-  width: calc(100% - 1em);
-  max-width: 900px;
-  height: 35px;
-  gap: 0.5px;
-  color: black;
-  align-items: center;
-  justify-content: center;
-  transition: filter 0.3s;
-}
-
-.navbar .search-bar #search-btn {
-  min-width: 1fr;
-  height: 100%;
-  background-color: #c990a1;
-  text-align: center;
-  font-weight: lighter;
-  border-radius: 0 10px 10px 0;
-}
-
-.navbar .search-bar #search-btn img {
-  filter: invert();
-}
-
-.navbar .search-bar:hover {
-  filter: drop-shadow(3px 3px 3px #000000);
-  transition: 0.3s;
-}
-
-.navbar .search-bar #filter {
-  min-width: 1fr;
-  height: 100%;
-  background-color: #d5dce3;
-  color: rgb(82, 82, 82);
-  text-align: center;
-  font-weight: lighter;
-  border-radius: 5px 0 0 5px;
-  cursor: pointer;
-}
-
-.navbar .search-bar #fill {
-  min-width: 50px;
-  width: calc(100% - 1em);
-  max-width: 900px;
-  height: 35px;
-  color: black;
-}
-
-.navbar .search-bar #fill:focus {
-  outline: none;
-  border: none;
-}
-
-.navbar #logo {
-  max-width: 50px;
 }
 
 #links {
@@ -189,7 +266,7 @@ button:hover {
 
 /* Sidebar Styling */
 .sidebar {
-  background-color: pink;
+  background-color: rgb(255, 255, 255);
   width: calc(13vw + 1em);
   min-height: 300px;
   max-height: 350px;
@@ -237,12 +314,16 @@ button:hover {
 .sidebar #close {
   position: absolute; /* Fixed within the sidebar */
   top: 10px; /* Distance from the top */
-  right: 10px; /* Distance from the right */
-  background-color: red; /* For visibility */
-  color: white;
-  padding: 10px;
+  left: 200px; /* Distance from the right */
+  background-color: rgb(255, 255, 255); /* For visibility */
+  color: black;
   cursor: pointer;
-  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  font-weight: 300;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 @keyframes slide {
@@ -262,24 +343,24 @@ body {
   0% {
     opacity: 0;
     transform: translateY(-50px);
-    font-size: 40px;
+    font-size: 26px;
   }
   60% {
     opacity: 0;
     transform: translateY(-50px);
-    font-size: 40px;
+    font-size: 26px;
     background-color: transparent;
   }
   70% {
     opacity: 1;
     color: blueviolet;
-    font-size: 40px;
+    font-size: 26px;
     transform: translateY(0px);
     background-color: transparent;
   }
   80% {
     color: black;
-    font-size: 45px;
+    font-size: 32px;
     background-color: transparent;
   }
   100% {
@@ -293,24 +374,24 @@ body {
   0% {
     opacity: 0;
     transform: translateX(-50px);
-    font-size: 40px;
+    font-size: 26px;
   }
   60% {
     opacity: 0;
     transform: translateX(-50px);
-    font-size: 40px;
+    font-size: 26px;
     background-color: transparent;
   }
   70% {
     opacity: 1;
     color: blueviolet;
-    font-size: 40px;
+    font-size: 26px;
     transform: translateX(0px);
     background-color: transparent;
   }
   80% {
     color: black;
-    font-size: 45px;
+    font-size: 30px;
     background-color: transparent;
   }
   90% {
@@ -531,79 +612,47 @@ body {
 
 /* Media Queries */
 
-/* Mobile Devices (max-width 432px) */
-@media (max-width: 432px) {
-  .products {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Single column layout */
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .products #card {
-    background-color: #000000; /* Set background color of cards to black */
-    width: 100%; /* Ensure card takes up full width */
-    max-width: 100vw;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .navbar {
-    flex-direction: column-reverse; /* Stack navbar items vertically */
-    padding: 10px;
-    column-gap: 15px; /* Adds spacing between elements */
-  }
-
-  .navbar .search-bar {
-    width: 100%; /* Make search bar span the entire width */
-  }
-
-  #links {
-    height: auto;
-  }
-
-  #links #menu img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .hero {
-    height: 40vh; /* Reduce height of hero for small screens */
-    padding: 100px 0 0 0;
-  }
-
-  /* Adjust product card height for smaller screens */
-  .products #card {
-    height: 300px;
-  }
-
-  /* Adjust the navbar logo size */
-  .navbar #logo {
-    max-width: 80px;
-  }
-
-  .navbar .cart {
-    position: relative;
-    margin-top: 10px;
-  }
-
-  /* Sidebar is hidden by default, add visibility class to show it */
-  .sidebar-div {
-    display: none; /* Hide the sidebar by default */
-  }
-
-  .visible {
-    display: block; /* Show the sidebar when the 'visible' class is added */
-  }
-}
-
 /* Tablets and Small Laptops (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .products {
     grid-template-columns: repeat(1, 1fr);
+    padding: 50px;
   }
   .navbar {
-    padding: 1px;
+    flex-direction: column; /* Stack items vertically on small screens */
+    justify-content: flex-start; /* Align items from top */
+  }
+
+  .navbar .logo,
+  .navbar .cart,
+  .navbar button,
+  .navbar select {
+    margin: 5px 0; /* Reduce margin between items */
+    flex-basis: auto; /* Allow the items to resize based on available space */
+    text-align: center; /* Center text for each item */
+  }
+
+  /* Adjust the search bar for smaller screens */
+  .navbar .search-bar {
+    width: 100%; /* Full width for search bar */
+    margin-top: 15px; /* Space between navbar items and search bar */
+  }
+
+  .navbar .search-bar #fill {
+    width: calc(100% - 100px); /* Make input field take the remaining space */
+  }
+
+  .navbar .search-bar #filter,
+  .navbar .search-bar #search-btn {
+    width: 40px; /* Set button size */
+    height: 35px; /* Set height for buttons */
+  }
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
   }
 
   .hero {
@@ -614,29 +663,7 @@ body {
     height: 350px;
   }
 
-  .navbar .search-bar {
-    display: flex;
-    min-width: 1fr;
-    width: calc(100% - 1em);
-    max-width: 900px;
-    height: 25px;
-    gap: 0.5px;
-    color: black;
-  }
-  .navbar .search-bar #fill {
-    height: 25px;
-    font-size: 10px;
-  }
-
-  .navbar .search-bar #filter {
-    width: 20px;
-  }
-  .navbar .search-bar #search-btn {
-    width: 20px;
-  }
-  .navbar .search-bar #search-btn img {
-    width: 10px;
-    justify-content: center;
-    align-items: center;
+  .navbar #logo {
+    max-width: 80px; /* Smaller logo size */
   }
 }

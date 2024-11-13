@@ -9,34 +9,44 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="index.html"
-        ><img id="logo" src="../../images/FB.png" alt=""
-      /></a>
-      <div class="search-bar">
-        <select name="Filter" id="filter">
-          <option value="">All</option>
+    <div class="navbar">
+      <!-- Left Section (Logo and Category Dropdown) -->
+      <div class="navbar-left">
+        <a href="index.html" class="logo" id="logo"
+          ><img src="../../images/FB.png" alt=""
+        /></a>
+        <select class="category-dropdown">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothing">Clothing</option>
+          <!-- More categories here -->
         </select>
-        <input id="fill" type="search" />
-        <button id="search-btn">
-          <img src="../../images/search.png" alt="Search" />
+      </div>
+
+      <!-- Center Section (Search Bar) -->
+      <div class="navbar-center">
+        <input
+          type="text"
+          class="search-input"
+          id="fill"
+          placeholder="Search"
+        />
+        <button class="search-button" id="search-btn">
+          <img src="../../images/search.png" alt="Search Icon" />
         </button>
       </div>
-      <button id="sign-in-button">Sign In</button>
-      <select name="Currency" id="lang-bar">
-        <option value="JMD">JMD</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-      </select>
-      <button id="orders">Orders</button>
-      <a href=""></a>
-      <div class="cart">
-        <span id="amount">0</span>
-        <button id="shop">
-          <img src="../../images/Cart.png" alt="Cart" />
+
+      <!-- Right Section (Links and Cart) -->
+      <div class="navbar-right">
+        <button class="nav-link" id="sign-in">Sign In</button>
+        <button class="nav-link" id="orders">Orders</button>
+        <button class="cart">
+          <img src="../../images/Cart.png" alt="Cart" id="shop" />
+          <span id="amount">0</span>
         </button>
       </div>
-    </nav>
+    </div>
+
     <nav id="links">
       <button id="menu">
         <img src="../../images/Menu.png" alt="Menu" />All
@@ -45,7 +55,9 @@
       <button>HOT!</button>
     </nav>
     <div class="sidebar-div">
-      <aside class="sidebar">Sidebar<button id="close">X</button></aside>
+      <aside class="sidebar">
+        Working on a sidebar<button id="close">X</button>
+      </aside>
     </div>
     <div class="hero">
       <h1 id="Welcome">Welcome To Flirt Boutique</h1>

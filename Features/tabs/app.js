@@ -141,14 +141,8 @@ const toggleSidebar = () => {
 // Attach event listeners for sidebar toggle
 menuBtn.addEventListener("click", toggleSidebar); // Open sidebar when menu button is clicked
 closeSidebar.addEventListener("click", toggleSidebar); // Close sidebar when close button is clicked
-
+let click = true;
 // Optional: Close sidebar when clicking outside (on the overlay)
-sideBarParent.addEventListener("click", (event) => {
-  if (event.target === sideBarParent) {
-    // Only close if the overlay itself (and not inside the sidebar) is clicked
-    toggleSidebar();
-  }
-});
 
 // Fetch the data when the page loads
 fetchData();
